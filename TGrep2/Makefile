@@ -1,8 +1,8 @@
 # Edit this line to point to the directory containing the drutils.h file:
-UTIL_DIR= ${HOME}/DRUtils
+UTIL_DIR= ../DRUtils
 
 UTIL_LIB= ${UTIL_DIR}/${HOSTTYPE}/libdrutils.a
-CC= gcc -O4 -Wall
+CC= gcc -O2 -Wall -DLITTLE_END -arch i386 -arch x86_64
 #CC= gcc -g -Wall
 
 tgrep2: tgrep2.c Makefile

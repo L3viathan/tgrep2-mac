@@ -11,3 +11,7 @@ I've precompiled the binary on a recent Macbook so it will probably work out of 
     make
 
 The binary doesn't need any other files to function, so you can move it somewhere on your path (like `/usr/local/bin`)
+
+
+## Copyright
+TGrep2 is Copyright (C) 2001-2005, Douglas L. T. Rohde. It is available free of charge and is governed by the GNU General Public License, version 2.

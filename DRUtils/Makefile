@@ -1,6 +1,7 @@
-CC = gcc -Wall -O4 -march=i486
-FLAGS = -DMACHINE_LINUX
+CC = gcc -Wall -O2 -fPIC -march=i486
+FLAGS = -DMACHINE_MACINTOSH
 DEBUG =
+HOSTTYPE = macintosh
 
 # Windows:
 ifeq ($(HOSTTYPE),i686)
@@ -9,7 +10,7 @@ endif
 # Macintosh:
 ifeq ($(HOSTTYPE),macintosh)
   MAKE = make
-  CC = cc -pipe -O3 -Wall -fno-common -arch ppc
+  CC = gcc -pipe -O2 -Wall -fPIC -arch i386 -arch x86_64
   FLAGS = -DMACHINE_MACINTOSH
 endif
 # Alpha:

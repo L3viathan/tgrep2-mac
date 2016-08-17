@@ -65,9 +65,9 @@ typedef unsigned int flag; /* a boolean.  This is an int because I use
 #ifdef MACHINE_MACINTOSH
 #  include <sys/types.h>
 #  include <machine/types.h>
-#  define NO_DRAND48
-#  ifdef LITTLE_END
-#    undef LITTLE_END
+/* #  define NO_DRAND48 */
+#  ifndef LITTLE_END
+#    define LITTLE_END
 #  endif /* LITTLE_END */
 #endif /* MACHINE_MACINTOSH */
 
@@ -153,10 +153,12 @@ because there is a bug in the xlc optimizer.
 #ifdef LITTLE_END
 #  define NaNfbytes {{ 0, 0, 0xc0, 0x7f }}
 #  define NaNdbytes {{ 0, 0, 0, 0, 0, 0, 0xf8, 0xff }}
+/*
 #  define NTOHL(x) ntohl(x)
 #  define HTONL(x) htonl(x)
 #  define NTOHS(x) ntohs(x)
 #  define HTONS(x) htons(x)
+*/
 #else
 #  define NTOHL(x) (x)
 #  define HTONL(x) (x)
